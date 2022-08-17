@@ -99,6 +99,11 @@ _G.packer_plugins = {
     path = "/Users/patrick/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  kommentary = {
+    loaded = true,
+    path = "/Users/patrick/.local/share/nvim/site/pack/packer/start/kommentary",
+    url = "https://github.com/b3nj5m1n/kommentary"
+  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/Users/patrick/.local/share/nvim/site/pack/packer/start/lspkind-nvim",

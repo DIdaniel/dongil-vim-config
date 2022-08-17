@@ -33,10 +33,10 @@ keymap.set('', 's<down>', '<C-w>j')
 keymap.set('', 's<left>', '<C-w>h')
 keymap.set('', 's<right>', '<C-w>l')
 
-keymap.set('', '<C-h>', '<C-w>h')
-keymap.set('', '<C-k>', '<C-w>k')
-keymap.set('', '<C-j>', '<C-w>j')
-keymap.set('', '<C-l>', '<C-w>l')
+keymap.set('n', '<C-h>', '<C-w>h')
+keymap.set('n', '<C-k>', '<C-w>k')
+keymap.set('n', '<C-j>', '<C-w>j')
+keymap.set('n', '<C-l>', '<C-w>l')
 
 -- Resize window
 -- keymap.set('n', '<C-w><up>', '<C-w>+')
@@ -44,3 +44,10 @@ keymap.set('n', '<C-S-Up>', ':resize -2<CR>')
 keymap.set('n', '<C-S-Down>', ':resize +2<CR>')
 keymap.set('n', '<C-S-Left>', ':vertical resize -2<CR>')
 keymap.set('n', '<C-S-Right>', ':vertical resize +2<CR>')
+
+-- Visual Block --
+-- Move text up and down
+keymap.set("x", "J", ":move '>+1<CR>gv-gv")
+keymap.set("x", "K", ":move '<-2<CR>gv-gv")
+keymap.set("x", "<A-j>", ":move '>+1<CR>gv-gv")
+keymap.set("x", "<A-k>", ":move '<-2<CR>gv-gv")
