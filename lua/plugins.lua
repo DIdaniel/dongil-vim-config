@@ -24,9 +24,7 @@ packer.startup(function(use)
   use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
-
   use 'b3nj5m1n/kommentary' -- Comment
-
   use 'glepnir/lspsaga.nvim' -- LSP UIs
   use 'L3MON4D3/LuaSnip' -- Snippet
   use {
@@ -34,13 +32,7 @@ packer.startup(function(use)
     run = ':TSUpdate'
   }
   use 'kyazdani42/nvim-web-devicons' -- File icons
-  --[[ use {
-    'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icons
-    },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
-  } ]]
+  use 'kyazdani42/nvim-tree.lua'
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-file-browser.nvim'
   use 'windwp/nvim-autopairs'
@@ -49,11 +41,21 @@ packer.startup(function(use)
   use 'folke/zen-mode.nvim'
   use({ "iamcco/markdown-preview.nvim", run = function() vim.fn["mkdp#util#install"]() end, })
   use 'akinsho/nvim-bufferline.lua'
-  -- use 'github/copilot.vim'
-
+  --
+  -- git
   use 'lewis6991/gitsigns.nvim'
   use 'dinhhuy258/git.nvim' -- For git blame & browse
+  use 'kdheepak/lazygit.nvim' -- lazygit
 
-  -- use 'voldikss/vim-floaterm' -- Float terminal
-  use { "akinsho/toggleterm.nvim", tag = 'v2.*', config = function() require("toggleterm").setup() end }
+  use { "akinsho/toggleterm.nvim", tag = 'v2.*', config = function() require("toggleterm").setup() end } -- toggleterm
+  use 'dinhhuy258/vim-local-history'
+
+  -- debugging
+  use 'mfussenegger/nvim-dap'
+  use 'leoluz/nvim-dap-go'
+  use 'rcarriga/nvim-dap-ui'
+  use 'theHamsta/nvim-dap-virtual-text'
+  use 'nvim-telescope/telescope-dap.nvim'
+  -- auto save
+  use "Pocco81/auto-save.nvim"
 end)

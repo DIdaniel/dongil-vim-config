@@ -38,6 +38,9 @@ keymap.set('n', '<C-k>', '<C-w>k')
 keymap.set('n', '<C-j>', '<C-w>j')
 keymap.set('n', '<C-l>', '<C-w>l')
 
+-- NvimTreeToggle
+keymap.set('n', '<Leader>e', ':NvimTreeToggle<cr>')
+
 -- Resize window
 -- keymap.set('n', '<C-w><up>', '<C-w>+')
 keymap.set('n', '<C-S-Up>', ':resize -2<CR>')
