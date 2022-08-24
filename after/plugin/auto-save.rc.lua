@@ -10,7 +10,7 @@ autosave.setup({
     dim = 0.18, -- dim the color of `message`
     cleaning_interval = 1250, -- (milliseconds) automatically clean MsgArea after displaying `message`. See :h MsgArea
   },
-  trigger_events = { "InsertLeave", "TextChanged" }, -- vim events that trigger auto-save. See :h events
+  trigger_events = { "" }, -- ex) "InsertLeave",TextChanged" vim events that trigger auto-save. See :h events
   debounce_delay = 135, -- saves the file at most every `debounce_delay` milliseconds
   callbacks = { -- functions to be executed at different intervals
     enabling = nil, -- ran when enabling auto-save

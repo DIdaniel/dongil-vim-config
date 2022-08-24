@@ -47,6 +47,7 @@ protocol.CompletionItemKind = {
 local capabilities = require('cmp_nvim_lsp').update_capabilities(
   vim.lsp.protocol.make_client_capabilities()
 )
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 nvim_lsp.flow.setup {
   on_attach = on_attach,
@@ -55,9 +56,15 @@ nvim_lsp.flow.setup {
 
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
-  filetypes = { "javascript", "javascriptreact", "javascript_diagnostic", "typescript", "typescriptreact",
-    "typescript.tsx" },
+  filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
   cmd = { "typescript-language-server", "--stdio" },
+  capabilities = capabilities
+}
+
+-- "html", "cssls", "javascript", "javascriptreact", "javascript_diagnostic",
+nvim_lsp.html.setup {
+  on_attach = on_attach,
+  filetypes = { "html" },
   capabilities = capabilities
 }
 
@@ -84,6 +91,24 @@ nvim_lsp.sumneko_lua.setup {
 }
 
 nvim_lsp.tailwindcss.setup {}
+
+
+
+nvim_lsp.emmet_ls.setup({
+  -- on_attach = on_attach
+  capabilities = capabilities,
+  filetypes = {
+    'html', 'typescriptreact', 'javascriptreact', 'xml', 'xsl', 'pug', 'slim', 'css', 'sass', 'scss', 'less'
+  },
+  init_options = {
+    html = {
+      options = {
+        -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+        ["bem.enabled"] = true
+      }
+    }
+  }
+})
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {

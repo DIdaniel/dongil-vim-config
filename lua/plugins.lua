@@ -56,6 +56,10 @@ packer.startup(function(use)
   use 'rcarriga/nvim-dap-ui'
   use 'theHamsta/nvim-dap-virtual-text'
   use 'nvim-telescope/telescope-dap.nvim'
+
   -- auto save
   use "Pocco81/auto-save.nvim"
+
+  -- emmet-vim
+  use 'mattn/emmet-vim'
 end)
