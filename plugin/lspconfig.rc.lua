@@ -65,7 +65,26 @@ nvim_lsp.tsserver.setup {
 nvim_lsp.html.setup {
   on_attach = on_attach,
   filetypes = { "html" },
+  -- init_options = {
+  --   configurationSection = { 'html', 'css', 'javascript' },
+  --   embeddedLanguages = {
+  --     css = true,
+  --     javascript = true,
+  --   },
+  --   provideFormatter = true
+  -- },
   capabilities = capabilities
+}
+
+nvim_lsp.cssls.setup {
+  on_attach = on_attach,
+  filetypes = { 'css', 'scss', 'less' },
+  capabilities = capabilities,
+  settings = {
+    css = { validate = true },
+    less = { validate = true },
+    scss = { validate = true },
+  }
 }
 
 nvim_lsp.sourcekit.setup {

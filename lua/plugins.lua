@@ -24,7 +24,9 @@ packer.startup(function(use)
   use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
-  use 'b3nj5m1n/kommentary' -- Comment
+  -- use 'b3nj5m1n/kommentary' -- Comment  --> jsx에서 제대로 작동하지 않음
+  use 'JoosepAlviste/nvim-ts-context-commentstring' -- Comment
+  use 'tpope/vim-commentary'
   use 'glepnir/lspsaga.nvim' -- LSP UIs
   use 'L3MON4D3/LuaSnip' -- Snippet
   use {
@@ -56,10 +58,17 @@ packer.startup(function(use)
   use 'rcarriga/nvim-dap-ui'
   use 'theHamsta/nvim-dap-virtual-text'
   use 'nvim-telescope/telescope-dap.nvim'
+  -- use 'puremourning/vimspector'
 
   -- auto save
-  use "Pocco81/auto-save.nvim"
+  -- use "Pocco81/auto-save.nvim"
 
   -- emmet-vim
   use 'mattn/emmet-vim'
+
+  -- multi-block
+  use 'mg979/vim-visual-multi'
+
+  -- live-server
+  use 'manzeloth/live-server'
 end)

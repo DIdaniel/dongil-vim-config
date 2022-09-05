@@ -4,6 +4,12 @@
 local status, dap = pcall(require, 'dap')
 if (not status) then return end
 
+dap.adapters.node2 = {
+  type = 'executable',
+  command = 'node',
+  args = { os.getenv('HOME') .. '/dev/microsoft/vscode-node-debug2/out/src/nodeDebug.js' },
+}
+
 dap.adapters.chrome = {
   type = "executable",
   command = "node",
@@ -35,3 +41,6 @@ dap.configurations.typescriptreact = { -- change to typescript if needed
     webRoot = "${workspaceFolder}"
   }
 }
+
+vim.fn.sign_define('DapBreakpoint', { text = '🟥', texthl = '', linehl = '', numhl = '' })
+vim.fn.sign_define('DapStopped', { text = '🟢', texthl = '', linehl = '', numhl = '' })

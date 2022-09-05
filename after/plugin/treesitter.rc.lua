@@ -2,6 +2,20 @@ local status, ts = pcall(require, "nvim-treesitter.configs")
 if (not status) then return end
 
 ts.setup {
+  context_commentstring = {
+    enable = true,
+    config = {
+      javascript = {
+        __default = '// %s',
+        jsx_element = '{/* %s */}',
+        jsx_fragment = '{/* %s */}',
+        jsx_attribute = '// %s',
+        comment = '// %s'
+      },
+      typescript = { __default = '// %s', __multiline = '/* %s */' },
+      css = '// %s'
+    }
+  },
   highlight = {
     enable = true,
     disable = {},

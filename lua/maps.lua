@@ -41,6 +41,21 @@ keymap.set('n', '<C-l>', '<C-w>l')
 -- NvimTreeToggle
 keymap.set('n', '<Leader>e', ':NvimTreeToggle<cr>')
 
+-- vimspector
+-- keymap.set('n', '<Leader>dd', ':call vimspector#Launch()<CR>')
+-- keymap.set('n', '<Leader>dx', ':VimspectorReset<CR>')
+-- keymap.set('n', '<Leader>de', ':VimspectorEval<CR>')
+-- keymap.set('n', '<Leader>dw', ':VimspectorWatch<CR>')
+-- keymap.set('n', '<Leader>do', ':VimspectorShowOutput<CR>')
+
+-- nvim-dap
+keymap.set('n', '<Leader>dh', ':DapToggleBreakpoint()<CR>')
+keymap.set('n', '<C-t>', ':DapStepOut()<CR>')
+keymap.set('n', '<C-i>', ':DapStepInto()<CR>')
+keymap.set('n', '<C-o>', ':DapStepOver()<CR>')
+keymap.set('n', '<Leader>dn', ':DapContinue()<CR>')
+keymap.set('n', '<Leader>dr', ':DapToggleRepl()<CR>')
+
 -- Resize window
 -- keymap.set('n', '<C-w><up>', '<C-w>+')
 keymap.set('n', '<C-S-Up>', ':resize -2<CR>')

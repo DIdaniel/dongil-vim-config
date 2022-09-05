@@ -4,7 +4,6 @@ if (not status) then return end
 prettier.setup {
   bin = 'prettierd',
   filetypes = {
-    "css",
     "graphql",
     "html",
     "javascript",
@@ -12,11 +11,12 @@ prettier.setup {
     "json",
     "less",
     "markdown",
-    "scss",
     "typescript",
     "typescriptreact",
     "yaml",
-    "html"
+    "css",
+    "scss",
+    "less"
   },
   --[[ cli_options = {
     -- https://prettier.io/docs/en/cli.html#--config-precedence
