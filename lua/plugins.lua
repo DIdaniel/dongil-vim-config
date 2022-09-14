@@ -22,6 +22,7 @@ packer.startup(function(use)
   use 'neovim/nvim-lspconfig' -- LSP
   use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
   use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
+  use 'lukas-reineke/lsp-format.nvim' -- for Format
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   -- use 'b3nj5m1n/kommentary' -- Comment  --> jsx에서 제대로 작동하지 않음
@@ -71,4 +72,7 @@ packer.startup(function(use)
 
   -- live-server
   use 'manzeloth/live-server'
+
+  -- vim-illuminate cursor
+  use 'RRethy/vim-illuminate'
 end)

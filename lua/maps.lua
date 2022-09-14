@@ -38,6 +38,9 @@ keymap.set('n', '<C-k>', '<C-w>k')
 keymap.set('n', '<C-j>', '<C-w>j')
 keymap.set('n', '<C-l>', '<C-w>l')
 
+-- Greatest remap ever ---> About paste
+keymap.set("x", "<leader>p", "\"_dP")
+
 -- NvimTreeToggle
 keymap.set('n', '<Leader>e', ':NvimTreeToggle<cr>')
 
