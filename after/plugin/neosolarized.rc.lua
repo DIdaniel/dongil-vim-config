@@ -2,6 +2,7 @@ local status, n = pcall(require, "neosolarized")
 if (not status) then return end
 
 n.setup({ comment_italics = true })
+n.Group.new('TODO', n.colors.blue)
 
 local cb = require('colorbuddy.init')
 local Color = cb.Color

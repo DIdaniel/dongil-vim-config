@@ -10,13 +10,14 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
   hijack_directories = {
-    enable = false,
+    enable = true,
+    auto_open = true,
   },
   -- update_to_buf_dir = {
   --   enable = false,
   -- },
-  -- disable_netrw = true,
-  -- hijack_netrw = true,
+  disable_netrw = false,
+  hijack_netrw = true,
   -- open_on_setup = false,
   ignore_ft_on_setup = {
     "startify",
@@ -24,30 +25,24 @@ nvim_tree.setup {
     "alpha",
   },
   filters = {
-    custom = { ".git" },
-    -- exclude = { ".gitignore" },
+    -- custom = { ".git" },
   },
-  -- auto_close = true,
-  -- open_on_tab = false,
-  -- hijack_cursor = false,
+  open_on_tab = false,
+  hijack_cursor = true,
+  hijack_unnamed_buffer_when_opening = true,
   update_cwd = true,
   -- update_to_buf_dir = {
   --   enable = true,
   --   auto_open = true,
   -- },
-  -- --   error
-  -- --   info
-  -- --   question
-  -- --   warning
-  -- --   lightbulb
   renderer = {
     add_trailing = false,
     group_empty = false,
     highlight_git = false,
-    highlight_opened_files = "none",
+    highlight_opened_files = "1",
     root_folder_modifier = ":t",
     indent_markers = {
-      enable = false,
+      enable = true,
       icons = {
         corner = "└ ",
         edge = "│ ",
@@ -69,8 +64,8 @@ nvim_tree.setup {
         default = "",
         symlink = "",
         folder = {
-          arrow_open = "→",
-          arrow_closed = "→",
+          arrow_open = "⭕",
+          arrow_closed = "🔴",
           default = "",
           open = "",
           empty = "",
@@ -93,42 +88,41 @@ nvim_tree.setup {
   diagnostics = {
     enable = true,
     icons = {
-      hint = "",
-      info = '',
-      warning = '',
-      error = '',
+      hint = "💡",
+      info = 'ℹ️',
+      warning = '⚠️',
+      error = '🐞',
     },
   },
   update_focused_file = {
     enable = true,
-    update_cwd = true,
-    ignore_list = {},
+    update_cwd = false,
   },
   -- system_open = {
   --   cmd = nil,
   --   args = {},
   -- },
-  -- filters = {
-  --   dotfiles = false,
-  --   custom = {},
-  -- },
   git = {
-    enable = true,
-    ignore = true,
+    enable = false,
+    -- ignore = false,
     timeout = 500,
   },
+  actions = {
+    open_file = {
+      resize_window = true
+    }
+  },
   view = {
-    width = 30,
-    height = 30,
-    hide_root_folder = false,
     side = "left",
+    width = 40,
+    hide_root_folder = true,
     -- auto_resize = true,
     mappings = {
       custom_only = false,
       list = {
         { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-        { key = "h", cb = tree_cb "close_node" },
         { key = "v", cb = tree_cb "vsplit" },
+        { key = "s", cb = tree_cb "split" },
       },
     },
     number = false,

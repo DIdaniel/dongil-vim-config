@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/Users/patrick/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["barbar.nvim"] = {
+    loaded = true,
+    path = "/Users/patrick/.local/share/nvim/site/pack/packer/start/barbar.nvim",
+    url = "https://github.com/romgrk/barbar.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/patrick/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -109,6 +114,11 @@ _G.packer_plugins = {
     path = "/Users/patrick/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["goto-preview"] = {
+    loaded = true,
+    path = "/Users/patrick/.local/share/nvim/site/pack/packer/start/goto-preview",
+    url = "https://github.com/rmagatti/goto-preview"
+  },
   ["lazygit.nvim"] = {
     loaded = true,
     path = "/Users/patrick/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
@@ -118,6 +128,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/patrick/.local/share/nvim/site/pack/packer/start/live-server",
     url = "https://github.com/manzeloth/live-server"
+  },
+  ["lsp-format.nvim"] = {
+    loaded = true,
+    path = "/Users/patrick/.local/share/nvim/site/pack/packer/start/lsp-format.nvim",
+    url = "https://github.com/lukas-reineke/lsp-format.nvim"
   },
   ["lspkind-nvim"] = {
     loaded = true,
@@ -143,6 +158,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/patrick/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
     url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
+  ["mason-null-ls.nvim"] = {
+    loaded = true,
+    path = "/Users/patrick/.local/share/nvim/site/pack/packer/start/mason-null-ls.nvim",
+    url = "https://github.com/jayp0521/mason-null-ls.nvim"
   },
   ["mason.nvim"] = {
     loaded = true,
@@ -183,21 +203,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/patrick/.local/share/nvim/site/pack/packer/start/nvim-dap",
     url = "https://github.com/mfussenegger/nvim-dap"
-  },
-  ["nvim-dap-go"] = {
-    loaded = true,
-    path = "/Users/patrick/.local/share/nvim/site/pack/packer/start/nvim-dap-go",
-    url = "https://github.com/leoluz/nvim-dap-go"
-  },
-  ["nvim-dap-ui"] = {
-    loaded = true,
-    path = "/Users/patrick/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
-    url = "https://github.com/rcarriga/nvim-dap-ui"
-  },
-  ["nvim-dap-virtual-text"] = {
-    loaded = true,
-    path = "/Users/patrick/.local/share/nvim/site/pack/packer/start/nvim-dap-virtual-text",
-    url = "https://github.com/theHamsta/nvim-dap-virtual-text"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -244,11 +249,6 @@ _G.packer_plugins = {
     path = "/Users/patrick/.local/share/nvim/site/pack/packer/start/prettier.nvim",
     url = "https://github.com/MunifTanjim/prettier.nvim"
   },
-  ["telescope-dap.nvim"] = {
-    loaded = true,
-    path = "/Users/patrick/.local/share/nvim/site/pack/packer/start/telescope-dap.nvim",
-    url = "https://github.com/nvim-telescope/telescope-dap.nvim"
-  },
   ["telescope-file-browser.nvim"] = {
     loaded = true,
     path = "/Users/patrick/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
@@ -265,15 +265,30 @@ _G.packer_plugins = {
     path = "/Users/patrick/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
+  undotree = {
+    loaded = true,
+    path = "/Users/patrick/.local/share/nvim/site/pack/packer/start/undotree",
+    url = "https://github.com/mbbill/undotree"
+  },
   ["vim-commentary"] = {
     loaded = true,
     path = "/Users/patrick/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
   },
-  ["vim-local-history"] = {
+  ["vim-devicons"] = {
     loaded = true,
-    path = "/Users/patrick/.local/share/nvim/site/pack/packer/start/vim-local-history",
-    url = "https://github.com/dinhhuy258/vim-local-history"
+    path = "/Users/patrick/.local/share/nvim/site/pack/packer/start/vim-devicons",
+    url = "https://github.com/ryanoasis/vim-devicons"
+  },
+  ["vim-illuminate"] = {
+    loaded = true,
+    path = "/Users/patrick/.local/share/nvim/site/pack/packer/start/vim-illuminate",
+    url = "https://github.com/RRethy/vim-illuminate"
+  },
+  ["vim-styled-components"] = {
+    loaded = true,
+    path = "/Users/patrick/.local/share/nvim/site/pack/packer/start/vim-styled-components",
+    url = "https://github.com/styled-components/vim-styled-components"
   },
   ["vim-visual-multi"] = {
     loaded = true,

@@ -5,37 +5,36 @@ bufferline.setup({
   options = {
     mode = "tabs",
     separator_style = 'slant',
-    always_show_bufferline = true,
-    show_buffer_close_icons = true,
-    show_close_icon = true,
+    always_show_bufferline = false,
+    show_buffer_close_icons = false,
+    show_close_icon = false,
     color_icons = true
   },
   highlights = {
     separator = {
-      fg = '#073642',
-      bg = '#002b36',
+      guifg = '#073642', -- 073642
+      guibg = '#002b36', -- 002b36
     },
     separator_selected = {
-      fg = '#073642',
+      guifg = '#073642', -- 073642
     },
     background = {
-      fg = '#657b83',
-      bg = '#002b36'
+      guifg = '#657b83', -- 657b83
+      guibg = '#002b36' -- 002b36
     },
     buffer_selected = {
-      fg = '#fdf6e3',
+      guifg = '#fdf6e3',
       bold = true,
-      -- underline = true,
-      -- undercurl = true,
-      italic = true
+      italic = true,
+      gui = 'bold'
     },
     fill = {
-      bg = '#073642'
+      guibg = '#073642'
     }
   },
 })
 
-vim.keymap.set('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', {})
-vim.keymap.set('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', {})
+-- vim.keymap.set('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', {})
+-- vim.keymap.set('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', {})
 vim.keymap.set('n', 'bp', '<Cmd>bprevious<CR>', {})
 vim.keymap.set('n', 'bn', '<Cmd>bnext<CR>', {})

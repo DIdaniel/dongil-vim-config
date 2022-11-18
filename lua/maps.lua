@@ -1,6 +1,6 @@
 local keymap = vim.keymap
 
-keymap.set('n', 'x', '"_x')
+-- keymap.set('n', 'x', '"_x')
 
 -- Increment/decrement
 keymap.set('n', '+', '<C-a>')
@@ -41,6 +41,14 @@ keymap.set('n', '<C-l>', '<C-w>l')
 -- Greatest remap ever ---> About paste
 keymap.set("x", "<leader>p", "\"_dP")
 
+-- Next greatest remap ever ---> asbjornHanland
+keymap.set("n", "<leader>y", "\"+y")
+keymap.set("v", "<leader>y", "\"+y")
+keymap.set("n", "<leader>Y", "\"+Y")
+
+keymap.set("n", "<leader>d", "\"_d")
+keymap.set("v", "<leader>d", "\"_d")
+
 -- NvimTreeToggle
 keymap.set('n', '<Leader>e', ':NvimTreeToggle<cr>')
 
@@ -52,12 +60,12 @@ keymap.set('n', '<Leader>e', ':NvimTreeToggle<cr>')
 -- keymap.set('n', '<Leader>do', ':VimspectorShowOutput<CR>')
 
 -- nvim-dap
-keymap.set('n', '<Leader>dh', ':DapToggleBreakpoint()<CR>')
-keymap.set('n', '<C-t>', ':DapStepOut()<CR>')
-keymap.set('n', '<C-i>', ':DapStepInto()<CR>')
-keymap.set('n', '<C-o>', ':DapStepOver()<CR>')
-keymap.set('n', '<Leader>dn', ':DapContinue()<CR>')
-keymap.set('n', '<Leader>dr', ':DapToggleRepl()<CR>')
+-- keymap.set('n', '<Leader>dh', ':DapToggleBreakpoint()<CR>')
+-- keymap.set('n', '<C-t>', ':DapStepOut()<CR>')
+-- keymap.set('n', '<C-i>', ':DapStepInto()<CR>')
+-- keymap.set('n', '<C-o>', ':DapStepOver()<CR>')
+-- keymap.set('n', '<Leader>dn', ':DapContinue()<CR>')
+-- keymap.set('n', '<Leader>dr', ':DapToggleRepl()<CR>')
 
 -- Resize window
 -- keymap.set('n', '<C-w><up>', '<C-w>+')
@@ -70,5 +78,6 @@ keymap.set('n', '<C-S-Right>', ':vertical resize +2<CR>')
 -- Move text up and down
 keymap.set("x", "J", ":move '>+1<CR>gv-gv")
 keymap.set("x", "K", ":move '<-2<CR>gv-gv")
-keymap.set("x", "<A-j>", ":move '>+1<CR>gv-gv")
-keymap.set("x", "<A-k>", ":move '<-2<CR>gv-gv")
+
+-- Undo tree
+keymap.set("n", "<Leader>u", "<Cmd>UndotreeToggle<CR>")

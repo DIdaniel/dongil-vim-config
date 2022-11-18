@@ -8,7 +8,10 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 
 
-vim.opt.mouse = a
+vim.opt.mouse = 'a'
+vim.opt.clipboard = 'unnamedplus'
+vim.opt.lazyredraw = true
+vim.opt.termguicolors = true
 vim.opt.title = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
@@ -18,7 +21,7 @@ vim.opt.showcmd = true
 vim.opt.cmdheight = 1
 vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
 vim.opt.timeoutlen = 1000 -- time to wait for a mapped sequence to complete ( in milliseconds)
-vim.opt.updatetime = 300 -- faster completion (40000ms default)
+vim.opt.updatetime = 100 -- faster completion (40000ms default)
 vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
 vim.opt.laststatus = 2
 vim.opt.expandtab = true

@@ -27,6 +27,7 @@ ts.setup {
   ensure_installed = {
     "json",
     "javascript",
+    "typescript",
     "tsx",
     "toml",
     "fish",
@@ -41,12 +42,12 @@ ts.setup {
   autotag = {
     enable = true,
   },
-  rainbow = {
-    enable = true,
-    extended_mode = true,
-    max_file_lines = nil,
-  }
+  -- rainbow = {
+  --   enable = false,
+  --   extended_mode = true,
+  --   max_file_lines = nil,
+  -- }
 }
 
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
-parser_config.tsx.filetype_to_parsername = { "javascriptreact", "javascript", "typescript.tsx", "typescript" }
+parser_config.tsx.filetype_to_parsername = { "javascriptreact", "javascript", "typescriptreact", "typescript" }

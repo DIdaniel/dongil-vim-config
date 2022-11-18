@@ -1,22 +1,50 @@
 local status, null_ls = pcall(require, "null-ls")
 if (not status) then return end
 
-local augroup_format = vim.api.nvim_create_augroup("Format", { clear = true })
+
+-- vim.lsp.buf.format({ timeout_ms = 10000 }) -- 2 seconds
+-- vim.cmd('map <Leader>lF :lua vim.lsp.buf.range_formatting()<CR>')
+
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
+local lsp_formatting = function(bufnr)
+  vim.lsp.buf.format({
+    filter = function(client)
+      return client.name == "null-ls"
+    end,
+    bufnr = bufnr,
+    timeout_ms = 5000,
+  })
+end
+
 
 null_ls.setup {
-  on_attach = function(client, bufnr)
-    if client.server_capabilities.documentFormattingProvider then
-      vim.api.nvim_command [[augroup Format]]
-      vim.api.nvim_command [[autocmd! * <buffer>]]
-      vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
-      vim.api.nvim_command [[augroup END]]
-    end
-  end,
-  source = {
-    null_ls.builtins.diagnostics.eslint_d.with({
-      diagnostics_format = '[eslint] #{m}\n(#{c})'
-    }),
+  sources = {
+    null_ls.builtins.formatting.prettierd,
+    null_ls.builtins.formatting.eslint,
+    -- null_ls.builtins.diagnostics.eslint_d.with({
+    --   diagnostics_format = '[eslint] #{m}\n(#{c})'
+    -- }),
     null_ls.builtins.diagnostics.zsh
-    -- null_ls.builtins.diagnostics.fish
-  }
+  },
+  on_attach = function(client, bufnr)
+    if client.supports_method("textDocument/formatting") then
+      vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        group = augroup,
+        buffer = bufnr,
+        callback = function()
+          lsp_formatting(bufnr)
+        end,
+      })
+    end
+  end
 }
+
+vim.api.nvim_create_user_command(
+  'DisableLspFormatting',
+  function()
+    vim.api.nvim_clear_autocmds({ group = augroup, buffer = 0 })
+  end,
+  { nargs = 0 }
+)
